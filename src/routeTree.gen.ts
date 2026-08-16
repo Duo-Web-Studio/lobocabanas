@@ -10,12 +10,25 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ContatoRouteImport } from './routes/contato'
+import { Route as ExperienciaRouteImport } from './routes/experiencia'
 import { Route as CabanasIndexRouteImport } from './routes/cabanas.index'
 import { Route as CabanasSlugRouteImport } from './routes/cabanas.$slug'
+import { Route as ReservaSucessoRouteImport } from './routes/reserva.sucesso'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContatoRoute = ContatoRouteImport.update({
+  id: '/contato',
+  path: '/contato',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ExperienciaRoute = ExperienciaRouteImport.update({
+  id: '/experiencia',
+  path: '/experiencia',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CabanasIndexRoute = CabanasIndexRouteImport.update({
@@ -28,34 +41,70 @@ const CabanasSlugRoute = CabanasSlugRouteImport.update({
   path: '/cabanas/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ReservaSucessoRoute = ReservaSucessoRouteImport.update({
+  id: '/reserva/sucesso',
+  path: '/reserva/sucesso',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/contato': typeof ContatoRoute
+  '/experiencia': typeof ExperienciaRoute
   '/cabanas/$slug': typeof CabanasSlugRoute
+  '/reserva/sucesso': typeof ReservaSucessoRoute
   '/cabanas/': typeof CabanasIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/contato': typeof ContatoRoute
+  '/experiencia': typeof ExperienciaRoute
   '/cabanas/$slug': typeof CabanasSlugRoute
+  '/reserva/sucesso': typeof ReservaSucessoRoute
   '/cabanas': typeof CabanasIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/contato': typeof ContatoRoute
+  '/experiencia': typeof ExperienciaRoute
   '/cabanas/$slug': typeof CabanasSlugRoute
+  '/reserva/sucesso': typeof ReservaSucessoRoute
   '/cabanas/': typeof CabanasIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/cabanas/$slug' | '/cabanas/'
+  fullPaths:
+    | '/'
+    | '/contato'
+    | '/experiencia'
+    | '/cabanas/$slug'
+    | '/reserva/sucesso'
+    | '/cabanas/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/cabanas/$slug' | '/cabanas'
-  id: '__root__' | '/' | '/cabanas/$slug' | '/cabanas/'
+  to:
+    | '/'
+    | '/contato'
+    | '/experiencia'
+    | '/cabanas/$slug'
+    | '/reserva/sucesso'
+    | '/cabanas'
+  id:
+    | '__root__'
+    | '/'
+    | '/contato'
+    | '/experiencia'
+    | '/cabanas/$slug'
+    | '/reserva/sucesso'
+    | '/cabanas/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ContatoRoute: typeof ContatoRoute
+  ExperienciaRoute: typeof ExperienciaRoute
   CabanasSlugRoute: typeof CabanasSlugRoute
+  ReservaSucessoRoute: typeof ReservaSucessoRoute
   CabanasIndexRoute: typeof CabanasIndexRoute
 }
 
@@ -66,6 +115,20 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contato': {
+      id: '/contato'
+      path: '/contato'
+      fullPath: '/contato'
+      preLoaderRoute: typeof ContatoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/experiencia': {
+      id: '/experiencia'
+      path: '/experiencia'
+      fullPath: '/experiencia'
+      preLoaderRoute: typeof ExperienciaRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/cabanas/': {
@@ -82,12 +145,22 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CabanasSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/reserva/sucesso': {
+      id: '/reserva/sucesso'
+      path: '/reserva/sucesso'
+      fullPath: '/reserva/sucesso'
+      preLoaderRoute: typeof ReservaSucessoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ContatoRoute: ContatoRoute,
+  ExperienciaRoute: ExperienciaRoute,
   CabanasSlugRoute: CabanasSlugRoute,
+  ReservaSucessoRoute: ReservaSucessoRoute,
   CabanasIndexRoute: CabanasIndexRoute,
 }
 export const routeTree = rootRouteImport
