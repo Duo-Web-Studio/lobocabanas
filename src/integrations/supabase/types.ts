@@ -518,6 +518,33 @@ export type Database = {
         Args: { _cabin_id: string; _user_id: string }
         Returns: boolean
       }
+      public_booking_by_code: {
+        Args: { p_code: string }
+        Returns: {
+          accommodation_subtotal: number
+          booking_code: string
+          cabin_name: string
+          cabin_slug: string
+          check_in: string
+          check_out: string
+          cleaning_fee: number
+          guest_first_name: string
+          guests: number
+          nights: number
+          status: Database["public"]["Enums"]["booking_status"]
+          total_amount: number
+        }[]
+      }
+      public_business_info: {
+        Args: never
+        Returns: {
+          address: string
+          business_name: string
+          business_whatsapp: string
+          contact_email: string
+          instagram_url: string
+        }[]
+      }
     }
     Enums: {
       app_role: "super_admin" | "cabin_admin"
