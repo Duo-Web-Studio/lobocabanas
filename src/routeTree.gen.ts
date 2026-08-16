@@ -10,33 +10,53 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as CabanasIndexRouteImport } from './routes/cabanas.index'
+import { Route as CabanasSlugRouteImport } from './routes/cabanas.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CabanasIndexRoute = CabanasIndexRouteImport.update({
+  id: '/cabanas/',
+  path: '/cabanas/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CabanasSlugRoute = CabanasSlugRouteImport.update({
+  id: '/cabanas/$slug',
+  path: '/cabanas/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/cabanas/$slug': typeof CabanasSlugRoute
+  '/cabanas/': typeof CabanasIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/cabanas/$slug': typeof CabanasSlugRoute
+  '/cabanas': typeof CabanasIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/cabanas/$slug': typeof CabanasSlugRoute
+  '/cabanas/': typeof CabanasIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/cabanas/$slug' | '/cabanas/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/cabanas/$slug' | '/cabanas'
+  id: '__root__' | '/' | '/cabanas/$slug' | '/cabanas/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CabanasSlugRoute: typeof CabanasSlugRoute
+  CabanasIndexRoute: typeof CabanasIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +68,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/cabanas/': {
+      id: '/cabanas/'
+      path: '/cabanas'
+      fullPath: '/cabanas/'
+      preLoaderRoute: typeof CabanasIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cabanas/$slug': {
+      id: '/cabanas/$slug'
+      path: '/cabanas/$slug'
+      fullPath: '/cabanas/$slug'
+      preLoaderRoute: typeof CabanasSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CabanasSlugRoute: CabanasSlugRoute,
+  CabanasIndexRoute: CabanasIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
