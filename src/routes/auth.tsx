@@ -29,6 +29,14 @@ function safePath(value?: string): string {
   return value;
 }
 
+function normalizeAuthError(message: string): string {
+  if (message.includes("Invalid login credentials")) return "E-mail ou senha incorretos.";
+  if (message.includes("Email not confirmed")) return "E-mail ainda não confirmado. Verifique sua caixa de entrada.";
+  if (message.includes("weak_password") || message.includes("Password is known")) return "Senha muito fraca. Use uma senha mais forte.";
+  if (message.includes("User already registered")) return "Este e-mail já está cadastrado.";
+  return message;
+}
+
 function AuthPage() {
   const { redirect } = Route.useSearch();
   const navigate = useNavigate();
