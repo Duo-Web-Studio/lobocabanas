@@ -60,8 +60,8 @@ export const createBooking = createServerFn({ method: "POST" })
       p_guest_name: data.guestName,
       p_guest_email: data.guestEmail,
       p_guest_phone: data.guestPhone,
-      p_guest_document: data.guestDocument || null,
-      p_notes: data.notes || null,
+      p_guest_document: data.guestDocument || undefined,
+      p_notes: data.notes || undefined,
     });
 
     if (error) {
