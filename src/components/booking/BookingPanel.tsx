@@ -102,18 +102,21 @@ export function BookingPanel({
   }
 
   return (
-    <div className="glass p-6 sm:p-8">
-      <div className="flex items-end justify-between gap-4 border-b border-border pb-5">
-        <div>
+    <div className="glass min-w-0 p-5 sm:p-8">
+      <div className="flex flex-col gap-3 border-b border-border pb-5 sm:flex-row sm:items-end sm:justify-between sm:gap-4">
+        <div className="min-w-0">
           <p className="eyebrow">A partir de</p>
-          <p className="pt-1 font-display text-3xl text-ivory">
+          <p className="pt-1 font-display text-2xl text-ivory sm:text-3xl">
             {brl(Number(cabin.base_price))}
             <span className="pl-2 text-sm text-mist">/ noite</span>
           </p>
         </div>
-        <p className="text-right text-xs text-mist">
+        <p className="text-xs text-mist sm:text-right">
           até {cabin.max_guests} hóspedes
-          <br />
+          <span className="hidden sm:inline">
+            <br />
+          </span>
+          <span className="sm:hidden"> · </span>
           taxa de limpeza {brl(Number(cabin.cleaning_fee))}
         </p>
       </div>
@@ -148,19 +151,19 @@ export function BookingPanel({
 
           {nights > 0 ? (
             <div className="space-y-2 border-t border-border pt-5 text-sm">
-              <div className="flex justify-between text-mist">
-                <span>
+              <div className="flex justify-between gap-3 text-mist">
+                <span className="min-w-0">
                   {nightsLabel(nights)} · {formatRange(checkIn, checkOut)}
                 </span>
-                <span>{brl(accommodation)}</span>
+                <span className="shrink-0">{brl(accommodation)}</span>
               </div>
-              <div className="flex justify-between text-mist">
+              <div className="flex justify-between gap-3 text-mist">
                 <span>Taxa de limpeza</span>
-                <span>{brl(Number(cabin.cleaning_fee))}</span>
+                <span className="shrink-0">{brl(Number(cabin.cleaning_fee))}</span>
               </div>
-              <div className="flex items-baseline justify-between pt-3 text-ivory">
+              <div className="flex items-baseline justify-between gap-3 pt-3 text-ivory">
                 <span className="eyebrow">Total</span>
-                <span className="font-display text-2xl">{brl(total)}</span>
+                <span className="shrink-0 font-display text-2xl">{brl(total)}</span>
               </div>
             </div>
           ) : null}
@@ -187,17 +190,17 @@ export function BookingPanel({
             if (validate()) mutation.mutate();
           }}
         >
-          <div className="flex items-center justify-between border-b border-border pb-4 text-sm">
-            <div>
-              <p className="text-ivory">{formatRange(checkIn, checkOut)}</p>
-              <p className="text-xs text-mist">
+          <div className="flex items-center justify-between gap-3 border-b border-border pb-4 text-sm">
+            <div className="min-w-0">
+              <p className="truncate text-ivory">{formatRange(checkIn, checkOut)}</p>
+              <p className="truncate text-xs text-mist">
                 {nightsLabel(nights)} · {guestLabel(booking.totalGuests)}
               </p>
             </div>
             <button
               type="button"
               onClick={() => setStep("dates")}
-              className="text-[0.7rem] uppercase tracking-[0.18em] text-mist transition-colors hover:text-ivory"
+              className="shrink-0 text-[0.7rem] uppercase tracking-[0.18em] text-mist transition-colors hover:text-ivory"
             >
               Alterar
             </button>
@@ -239,9 +242,9 @@ export function BookingPanel({
             onChange={(event) => setForm({ ...form, notes: event.target.value })}
           />
 
-          <div className="flex items-baseline justify-between border-t border-border pt-4">
+          <div className="flex items-baseline justify-between gap-3 border-t border-border pt-4">
             <span className="eyebrow">Total</span>
-            <span className="font-display text-2xl text-ivory">{brl(total)}</span>
+            <span className="shrink-0 font-display text-2xl text-ivory">{brl(total)}</span>
           </div>
 
           <NomaButton type="submit" size="lg" className="w-full" disabled={mutation.isPending}>

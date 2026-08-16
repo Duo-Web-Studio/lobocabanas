@@ -160,26 +160,29 @@ export function BookingCalendar({
         </button>
       </div>
 
-      <div className={cn("grid gap-8", months === 2 && "sm:grid-cols-2")}>
+      <div className={cn("grid min-w-0 gap-8", months === 2 && "sm:grid-cols-2")}>
         {Array.from({ length: months }, (_, offset) => {
           const monthIso = addMonths(cursor, offset);
           const days = monthDays(monthIso);
           const leading = isoToDate(days[0]!).getUTCDay();
           return (
-            <div key={monthIso}>
+            <div key={monthIso} className="min-w-0">
               {months === 2 ? (
                 <p className="pb-3 text-center text-xs capitalize text-mist">
                   {monthLabel(monthIso)}
                 </p>
               ) : null}
-              <div className="grid grid-cols-7 gap-y-1 pb-2 text-center">
+              <div className="grid grid-cols-7 gap-x-0.5 gap-y-1 pb-2 text-center">
                 {WEEKDAYS_SHORT.map((label, index) => (
-                  <span key={index} className="text-[0.65rem] tracking-[0.15em] text-mist/50">
+                  <span
+                    key={index}
+                    className="min-w-0 text-[0.6rem] tracking-[0.08em] text-mist/50 sm:text-[0.65rem] sm:tracking-[0.15em]"
+                  >
                     {label}
                   </span>
                 ))}
               </div>
-              <div className="grid grid-cols-7 gap-y-1">
+              <div className="grid grid-cols-7 gap-x-0.5 gap-y-1">
                 {Array.from({ length: leading }, (_, index) => (
                   <span key={`pad-${index}`} />
                 ))}
@@ -208,7 +211,7 @@ export function BookingCalendar({
                       aria-label={date}
                       aria-pressed={isStart || isEnd}
                       className={cn(
-                        "group relative flex h-11 flex-col items-center justify-center text-sm transition-colors duration-300",
+                        "group relative flex h-12 min-w-0 flex-col items-center justify-center gap-0.5 text-sm transition-colors duration-300",
                         blocked && "cursor-not-allowed text-mist/25 line-through decoration-1",
                         tooShort && "cursor-not-allowed text-mist/30",
                         !blocked && !tooShort && "text-ivory hover:bg-moss/25",
@@ -220,7 +223,7 @@ export function BookingCalendar({
                       {day && !blocked ? (
                         <span
                           className={cn(
-                            "text-[0.55rem] leading-none opacity-0 transition-opacity duration-300 group-hover:opacity-70",
+                            "max-w-full truncate text-[0.5rem] leading-none opacity-70 transition-opacity duration-300 sm:text-[0.55rem] sm:opacity-0 sm:group-hover:opacity-70",
                             (isStart || isEnd) && "opacity-80",
                           )}
                         >
@@ -236,13 +239,15 @@ export function BookingCalendar({
         })}
       </div>
 
-      <div className="flex items-center justify-between pt-5 text-[0.7rem] text-mist/70">
-        <span>{isPending ? "Carregando disponibilidade…" : "Datas riscadas não disponíveis"}</span>
+      <div className="flex flex-wrap items-center justify-between gap-2 pt-5 text-[0.7rem] text-mist/70">
+        <span className="min-w-0">
+          {isPending ? "Carregando disponibilidade…" : "Datas riscadas não disponíveis"}
+        </span>
         {checkIn ? (
           <button
             type="button"
             onClick={() => onChange({ checkIn: null, checkOut: null })}
-            className="uppercase tracking-[0.18em] text-mist transition-colors hover:text-ivory"
+            className="shrink-0 uppercase tracking-[0.18em] text-mist transition-colors hover:text-ivory"
           >
             Limpar
           </button>

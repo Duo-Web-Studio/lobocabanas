@@ -18,18 +18,18 @@ function Row({
   max: number;
 }) {
   return (
-    <div className="flex items-center justify-between py-3.5">
-      <div>
-        <p className="text-sm text-ivory">{label}</p>
-        <p className="text-xs text-mist/70">{hint}</p>
+    <div className="flex items-center justify-between gap-3 py-3.5">
+      <div className="min-w-0">
+        <p className="truncate text-sm text-ivory">{label}</p>
+        <p className="truncate text-xs text-mist/70">{hint}</p>
       </div>
-      <div className="flex items-center gap-4">
+      <div className="flex shrink-0 items-center gap-3 sm:gap-4">
         <button
           type="button"
           aria-label={`Diminuir ${label}`}
           disabled={value <= min}
           onClick={() => onChange(value - 1)}
-          className="rounded-full border border-border p-1.5 text-mist transition-colors hover:border-sage hover:text-ivory disabled:opacity-25"
+          className="rounded-full border border-border p-2.5 text-mist transition-colors hover:border-sage hover:text-ivory disabled:opacity-25"
         >
           <Minus className="size-3.5" />
         </button>
@@ -39,7 +39,7 @@ function Row({
           aria-label={`Aumentar ${label}`}
           disabled={value >= max}
           onClick={() => onChange(value + 1)}
-          className="rounded-full border border-border p-1.5 text-mist transition-colors hover:border-sage hover:text-ivory disabled:opacity-25"
+          className="rounded-full border border-border p-2.5 text-mist transition-colors hover:border-sage hover:text-ivory disabled:opacity-25"
         >
           <Plus className="size-3.5" />
         </button>
