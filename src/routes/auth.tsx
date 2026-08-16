@@ -56,11 +56,12 @@ function AuthPage() {
           },
         });
         if (error) throw error;
-        toast.success("Conta criada. Peça a um administrador para liberar seu acesso.");
+        toast.success("Conta criada. Agora você já pode entrar com e-mail e senha.");
         setMode("signin");
       }
     } catch (error) {
-      toast.error(error instanceof Error ? error.message : "Não foi possível entrar.");
+      const message = normalizeAuthError(error instanceof Error ? error.message : "Não foi possível entrar.");
+      toast.error(message);
     } finally {
       setLoading(false);
     }
@@ -76,7 +77,7 @@ function AuthPage() {
         <p className="pt-2 text-sm text-mist">
           {mode === "signin"
             ? "Entre para gerenciar reservas, tarifas e disponibilidade."
-            : "Crie sua conta — um super admin libera as permissões depois."}
+            : "Crie sua conta. Se você for o primeiro usuário, poderá assumir o acesso de super admin depois de entrar."}
         </p>
 
         <form className="space-y-6 pt-10" onSubmit={handleSubmit}>
