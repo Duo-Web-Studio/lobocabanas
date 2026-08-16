@@ -63,9 +63,9 @@ function Index() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.55, duration: 1.2 }}
           >
-            O silêncio tem
+            Onde a floresta
             <br />
-            endereço.
+            encontra o conforto.
           </motion.h1>
           <motion.p
             className="max-w-md pt-6 text-base leading-relaxed text-mist"
@@ -73,8 +73,7 @@ function Index() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8, duration: 1 }}
           >
-            Duas cabanas. Nenhum vizinho. Hidromassagem privativa, fogueira acesa e mata nativa até
-            onde a vista alcança.
+            Cabanas privadas criadas para desaparecer da rotina.
           </motion.p>
           <motion.div
             className="flex flex-wrap items-center gap-3 pt-10"
@@ -126,12 +125,13 @@ function Index() {
           </div>
           <div>
             <h2 className="font-display text-[clamp(1.75rem,4vw,3rem)] leading-tight text-ivory">
-              Construímos duas cabanas para que a floresta continuasse sendo a atração principal.
+              Duas cabanas de madeira em formato A-Frame, escondidas onde a mata é mais fechada.
             </h2>
             <p className="max-w-xl pt-6 leading-relaxed text-mist">
-              Cada unidade fica isolada em sua própria clareira, com deck privativo voltado para a
-              mata. Sem recepção, sem corredores, sem trilha sonora ambiente — apenas madeira,
-              vidro, água quente e o barulho real da floresta.
+              Telhado inclinado, madeira aparente, teto alto e janela triangular voltada para as
+              árvores. Cada cabana fica isolada em sua própria clareira, com fogueira e deck
+              privativo. Sem recepção, sem corredores, sem trilha sonora ambiente — apenas madeira,
+              luz quente, água aquecida e o barulho real da floresta.
             </p>
           </div>
         </div>

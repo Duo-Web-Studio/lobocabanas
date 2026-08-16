@@ -1,5 +1,6 @@
 import heroForest from "@/assets/hero-forest.jpg";
 import auroraInterior from "@/assets/aurora-interior.jpg";
+import auroraExterior from "@/assets/aurora-exterior.jpg";
 import selvaExterior from "@/assets/selva-exterior.jpg";
 import galleryHidro from "@/assets/gallery-hidro.jpg";
 import galleryFogueira from "@/assets/gallery-fogueira.jpg";
@@ -8,6 +9,7 @@ import galleryFloresta from "@/assets/gallery-floresta.jpg";
 export const IMAGES = {
   heroForest,
   auroraInterior,
+  auroraExterior,
   selvaExterior,
   galleryHidro,
   galleryFogueira,
@@ -15,7 +17,7 @@ export const IMAGES = {
 };
 
 const COVERS: Record<string, string> = {
-  aurora: auroraInterior,
+  aurora: auroraExterior,
   selva: selvaExterior,
 };
 
@@ -25,26 +27,34 @@ export function cabinCover(slug: string, coverImage?: string | null): string {
 
 export function cabinGallery(slug: string, gallery?: unknown): string[] {
   if (Array.isArray(gallery) && gallery.length > 0) return gallery as string[];
-  const base = slug === "selva" ? selvaExterior : auroraInterior;
-  return [base, galleryHidro, galleryFogueira, galleryFloresta, heroForest];
+  const base = slug === "selva" ? selvaExterior : auroraExterior;
+  return [base, auroraInterior, galleryHidro, galleryFogueira, galleryFloresta];
 }
 
 export const EDITORIAL_GALLERY = [
   {
     src: auroraInterior,
-    alt: "Interior da cabana com cama king e vista para a mata",
+    alt: "Interior da cabana A-Frame com teto inclinado de madeira e cama king",
     caption: "Sem despertadores.",
   },
   {
     src: galleryHidro,
-    alt: "Hidromassagem privativa no deck ao anoitecer",
+    alt: "Ofurô privativo no deck de madeira ao anoitecer, entre as árvores",
     caption: "Sem trânsito.",
   },
   {
     src: galleryFogueira,
-    alt: "Fogueira acesa no deck de madeira",
+    alt: "Fogueira de pedra acesa em frente à cabana A-Frame iluminada",
     caption: "Sem pressa.",
   },
-  { src: galleryFloresta, alt: "Mata nativa ao amanhecer", caption: "Só floresta." },
-  { src: selvaExterior, alt: "Cabana Selva vista de fora, entre árvores", caption: "E silêncio." },
+  {
+    src: galleryFloresta,
+    alt: "Trilha de pedra na mata fechada levando à cabana escondida",
+    caption: "Só floresta.",
+  },
+  {
+    src: selvaExterior,
+    alt: "Cabana Selva, chalé A-Frame de madeira cercado por árvores altas",
+    caption: "E silêncio.",
+  },
 ];
