@@ -102,7 +102,28 @@ function Index() {
 
       <section className="mx-auto max-w-[1400px] px-6 py-24 lg:px-12 lg:py-36">
         <div className="grid gap-12 md:grid-cols-[0.8fr_1.2fr]">
-          <p className="eyebrow">A ideia</p>
+          <div>
+            <p className="eyebrow">A ideia</p>
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
+              className="pt-6"
+            >
+              <div className="aspect-[3/4] overflow-hidden">
+                <img
+                  src={IMAGES.selvaExterior}
+                  alt="Cabana de madeira com varanda cercada pela mata nativa"
+                  loading="lazy"
+                  className="size-full object-cover"
+                />
+              </div>
+              <p className="pt-3 text-[0.65rem] uppercase tracking-[0.18em] text-mist/60">
+                Mata Atlântica · duas cabanas · zero vizinhos
+              </p>
+            </motion.div>
+          </div>
           <div>
             <h2 className="font-display text-[clamp(1.75rem,4vw,3rem)] leading-tight text-ivory">
               Construímos duas cabanas para que a floresta continuasse sendo a atração principal.
