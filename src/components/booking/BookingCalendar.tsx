@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { useServerFn } from "@tanstack/react-start";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 import {
   addDays,
@@ -48,6 +48,7 @@ export function BookingCalendar({
   checkIn,
   checkOut,
   onChange,
+  onRangePrice,
   months = 1,
   className,
 }: {
@@ -55,6 +56,7 @@ export function BookingCalendar({
   checkIn: string | null;
   checkOut: string | null;
   onChange: (value: { checkIn: string | null; checkOut: string | null }) => void;
+  onRangePrice?: (total: number | null) => void;
   months?: 1 | 2;
   className?: string;
 }) {
@@ -79,6 +81,25 @@ export function BookingCalendar({
   }, [data]);
 
   const canGoBack = monthStart(cursor) > monthStart(today);
+
+  useEffect(() => {
+    if (!onRangePrice) return;
+    if (!checkIn || !checkOut) {
+      onRangePrice(null);
+      return;
+    }
+    let total = 0;
+    let complete = true;
+    for (let date = checkIn; date < checkOut; date = addDays(date, 1)) {
+      const day = dayMap.get(date);
+      if (!day) {
+        complete = false;
+        break;
+      }
+      total += day.price;
+    }
+    onRangePrice(complete ? total : null);
+  }, [checkIn, checkOut, dayMap, onRangePrice]);
 
   function rangeIsFree(start: string, end: string): boolean {
     for (let date = start; date < end; date = addDays(date, 1)) {
