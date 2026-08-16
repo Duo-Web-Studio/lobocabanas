@@ -91,8 +91,8 @@ function CabinDetail() {
         </div>
       </section>
 
-      <div className="mx-auto grid max-w-[1400px] gap-14 px-6 py-16 lg:grid-cols-[1.4fr_0.9fr] lg:px-12 lg:py-24">
-        <div>
+      <div className="mx-auto grid max-w-[1400px] gap-14 px-5 py-16 sm:px-6 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,0.9fr)] lg:px-12 lg:py-24">
+        <div className="min-w-0">
           <p className="max-w-2xl text-lg leading-relaxed text-mist">{cabin.description}</p>
 
           <div className="grid grid-cols-2 gap-x-8 gap-y-4 border-y border-border py-6 pt-8 sm:grid-cols-4">
@@ -133,7 +133,7 @@ function CabinDetail() {
                   className="size-full object-cover"
                 />
               </div>
-              <div className="flex gap-3 overflow-x-auto pt-3">
+              <div className="flex w-full gap-3 overflow-x-auto pt-3">
                 {gallery.map((src, index) => (
                   <button
                     key={src + index}
@@ -152,7 +152,7 @@ function CabinDetail() {
           </div>
         </div>
 
-        <div className="lg:sticky lg:top-28 lg:self-start">
+        <div className="min-w-0 lg:sticky lg:top-28 lg:self-start">
           <BookingPanel
             cabin={{
               id: cabin.id,
