@@ -37,9 +37,9 @@ export function Footer({
             <Link to="/contato" className="transition-colors hover:text-ivory">
               Contato
             </Link>
-            <Link to="/admin" className="transition-colors hover:text-ivory">
+            <a href="/admin" className="transition-colors hover:text-ivory">
               Área administrativa
-            </Link>
+            </a>
           </div>
         </div>
 
