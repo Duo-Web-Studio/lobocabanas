@@ -11,7 +11,7 @@ import { cabinCover, EDITORIAL_GALLERY, IMAGES } from "@/lib/images";
 import { listCabins } from "@/lib/public.functions";
 import { generalMessage, waLink } from "@/lib/whatsapp-link";
 
-const TITLE = "NOMA — Cabanas de luxo perto de Goiânia";
+const TITLE = "Lobo Cabanas — Cabanas de luxo perto de Goiânia";
 const DESCRIPTION =
   "Duas cabanas privativas na floresta, a poucos minutos de Goiânia: hidromassagem no deck, fogueira e silêncio absoluto. Reserve direto, sem intermediários.";
 

@@ -79,14 +79,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "NOMA — Cabanas de luxo perto de Goiânia" },
+      { title: "Lobo Cabanas — Cabanas de luxo perto de Goiânia" },
       {
         name: "description",
         content:
           "Cabanas privativas de luxo em meio à floresta, a poucos minutos de Goiânia. Hidromassagem no deck, fogueira e reserva direta.",
       },
-      { name: "author", content: "NOMA Forest Cabins" },
-      { property: "og:title", content: "NOMA — Cabanas de luxo perto de Goiânia" },
+      { name: "author", content: "Lobo Cabanas" },
+      { property: "og:title", content: "Lobo Cabanas — Cabanas de luxo perto de Goiânia" },
       {
         property: "og:description",
         content:

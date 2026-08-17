@@ -24,7 +24,7 @@ export function SiteLayout({ children }: { children: React.ReactNode }) {
       <Header whatsapp={whatsapp} />
       <main className="flex-1">{children}</main>
       <Footer
-        businessName={data?.businessName ?? "NOMA Forest Cabins"}
+        businessName={data?.businessName ?? "Lobo Cabanas"}
         whatsapp={whatsapp}
         instagram={data?.instagram ?? null}
         email={data?.email ?? null}

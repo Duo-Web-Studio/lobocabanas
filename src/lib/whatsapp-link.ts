@@ -9,11 +9,11 @@ export function waLink(phone: string | null | undefined, message: string): strin
 }
 
 export function generalMessage(): string {
-  return "Olá! Estou vendo as cabanas da NOMA e gostaria de tirar uma dúvida.";
+  return "Olá! Estou vendo as cabanas da Lobo Cabanas e gostaria de tirar uma dúvida.";
 }
 
 export function cabinMessage(cabinName: string): string {
-  return `Olá! Estou vendo a Cabana ${cabinName} no site da NOMA e gostaria de tirar uma dúvida.`;
+  return `Olá! Estou vendo a Cabana ${cabinName} no site da Lobo Cabanas e gostaria de tirar uma dúvida.`;
 }
 
 export function cabinDatesMessage(
@@ -35,5 +35,5 @@ export function guestContactMessage(
   code: string,
   cabinName: string,
 ): string {
-  return `Olá ${guestFirstName}! Aqui é da NOMA Forest Cabins. Estamos entrando em contato sobre sua reserva ${code} para a Cabana ${cabinName}.`;
+  return `Olá ${guestFirstName}! Aqui é da Lobo Cabanas. Estamos entrando em contato sobre sua reserva ${code} para a Cabana ${cabinName}.`;
 }

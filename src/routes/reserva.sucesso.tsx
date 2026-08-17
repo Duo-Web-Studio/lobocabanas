@@ -11,7 +11,7 @@ import { brl, formatLong, guestLabel, nightsLabel } from "@/lib/format";
 import { getBookingByCode } from "@/lib/public.functions";
 import { bookingDoneMessage, waLink } from "@/lib/whatsapp-link";
 
-const TITLE = "Reserva confirmada — NOMA Forest Cabins";
+const TITLE = "Reserva confirmada — Lobo Cabanas";
 const DESCRIPTION = "Sua solicitação de reserva foi registrada. Confira os detalhes da estadia.";
 
 export const Route = createFileRoute("/reserva/sucesso")({
