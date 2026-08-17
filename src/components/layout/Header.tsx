@@ -46,7 +46,7 @@ export function Header({ whatsapp }: { whatsapp?: string | null }) {
           <img
             src={logoAsset.url}
             alt="Lobo Cabanas"
-            className="h-[30px] w-auto rounded-sm md:h-9"
+            className="h-[30px] w-auto rounded-xl md:h-9"
           />
         </Link>
 
