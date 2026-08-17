@@ -3,9 +3,9 @@ import { sendWhatsAppMessage } from "./whatsapp.server";
 export type NotificationType = "booking_created" | "booking_confirmed" | "booking_cancelled";
 
 const TITLES: Record<NotificationType, string> = {
-  booking_created: "🌲 Nova reserva NOMA",
-  booking_confirmed: "✅ Reserva confirmada — NOMA",
-  booking_cancelled: "⚠️ Reserva cancelada — NOMA",
+  booking_created: "🌲 Nova reserva Lobo Cabanas",
+  booking_confirmed: "✅ Reserva confirmada — Lobo Cabanas",
+  booking_cancelled: "⚠️ Reserva cancelada — Lobo Cabanas",
 };
 
 const STATUS_LABEL: Record<string, string> = {

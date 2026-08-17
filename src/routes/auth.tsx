@@ -7,8 +7,8 @@ import { NomaButton } from "@/components/premium/NomaButton";
 import { PremiumInput } from "@/components/premium/PremiumInput";
 import { supabase } from "@/integrations/supabase/client";
 
-const TITLE = "Acesso da equipe — NOMA Forest Cabins";
-const DESCRIPTION = "Área restrita para a equipe NOMA gerenciar reservas, tarifas e disponibilidade.";
+const TITLE = "Acesso da equipe — Lobo Cabanas";
+const DESCRIPTION = "Área restrita para a equipe Lobo Cabanas gerenciar reservas, tarifas e disponibilidade.";
 
 export const Route = createFileRoute("/auth")({
   validateSearch: z.object({ redirect: z.string().optional().catch(undefined) }),
@@ -78,7 +78,7 @@ function AuthPage() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-6">
       <div className="w-full max-w-sm">
-        <p className="font-display text-xl tracking-[0.35em] text-ivory">NOMA</p>
+        <p className="font-display text-xl tracking-[0.35em] text-ivory">LOBO CABANAS</p>
         <h1 className="pt-6 font-display text-3xl text-ivory">
           {mode === "signin" ? "Acesso da equipe" : "Criar acesso"}
         </h1>

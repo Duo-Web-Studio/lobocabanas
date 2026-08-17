@@ -4,9 +4,9 @@ import { SiteLayout, useBusinessInfo } from "@/components/layout/SiteLayout";
 import { NomaButton } from "@/components/premium/NomaButton";
 import { generalMessage, waLink } from "@/lib/whatsapp-link";
 
-const TITLE = "Contato — NOMA Forest Cabins";
+const TITLE = "Contato — Lobo Cabanas";
 const DESCRIPTION =
-  "Fale direto com a NOMA por WhatsApp ou e-mail para dúvidas, estadias longas e reservas especiais nas cabanas perto de Goiânia.";
+  "Fale direto com a Lobo Cabanas por WhatsApp ou e-mail para dúvidas, estadias longas e reservas especiais nas cabanas perto de Goiânia.";
 
 export const Route = createFileRoute("/contato")({
   head: () => ({

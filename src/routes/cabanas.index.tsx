@@ -10,7 +10,7 @@ import { brl } from "@/lib/format";
 import { cabinCover } from "@/lib/images";
 import { listCabins } from "@/lib/public.functions";
 
-const TITLE = "Cabanas — NOMA Forest Cabins";
+const TITLE = "Cabanas — Lobo Cabanas";
 const DESCRIPTION =
   "Conheça as cabanas Aurora e Ipê: hidromassagem privativa, deck sobre a floresta e preços por noite atualizados. Consulte a disponibilidade.";
 

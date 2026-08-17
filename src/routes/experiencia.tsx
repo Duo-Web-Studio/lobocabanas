@@ -5,9 +5,9 @@ import { SiteLayout } from "@/components/layout/SiteLayout";
 import { NomaButton } from "@/components/premium/NomaButton";
 import { EDITORIAL_GALLERY, IMAGES } from "@/lib/images";
 
-const TITLE = "A experiência — NOMA Forest Cabins";
+const TITLE = "A experiência — Lobo Cabanas";
 const DESCRIPTION =
-  "Como funciona uma estadia na NOMA: check-in autônomo, hidromassagem privativa, fogueira ao anoitecer e café da manhã entregue na porta.";
+  "Como funciona uma estadia na Lobo Cabanas: check-in autônomo, hidromassagem privativa, fogueira ao anoitecer e café da manhã entregue na porta.";
 
 export const Route = createFileRoute("/experiencia")({
   head: () => ({

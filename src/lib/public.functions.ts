@@ -66,7 +66,7 @@ export const getBusinessInfo = createServerFn({ method: "GET" }).handler(async (
   if (error) throw new Error(error.message);
   const info = data?.[0];
   return {
-    businessName: info?.business_name ?? "NOMA Forest Cabins",
+    businessName: info?.business_name ?? "Lobo Cabanas",
     whatsapp: info?.business_whatsapp ?? null,
     instagram: info?.instagram_url ?? null,
     email: info?.contact_email ?? null,

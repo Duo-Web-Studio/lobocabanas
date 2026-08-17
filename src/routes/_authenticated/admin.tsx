@@ -11,11 +11,11 @@ import { claimFirstSuperAdmin, getAdminSession } from "@/lib/admin.functions";
 export const Route = createFileRoute("/_authenticated/admin")({
   head: () => ({
     meta: [
-      { title: "Painel — NOMA Forest Cabins" },
-      { name: "description", content: "Painel administrativo das cabanas NOMA." },
+      { title: "Painel — Lobo Cabanas" },
+      { name: "description", content: "Painel administrativo das cabanas Lobo Cabanas." },
       { name: "robots", content: "noindex" },
-      { property: "og:title", content: "Painel — NOMA Forest Cabins" },
-      { property: "og:description", content: "Painel administrativo das cabanas NOMA." },
+      { property: "og:title", content: "Painel — Lobo Cabanas" },
+      { property: "og:description", content: "Painel administrativo das cabanas Lobo Cabanas." },
     ],
   }),
   component: AdminLayout,
@@ -92,7 +92,7 @@ function AdminLayout() {
         <div className="mx-auto flex max-w-[1400px] flex-wrap items-center justify-between gap-4 px-6 py-5 lg:px-10">
           <div className="flex items-baseline gap-4">
             <Link to="/" className="font-display text-lg tracking-[0.3em] text-ivory">
-              NOMA
+              Lobo Cabanas
             </Link>
             <span className="text-[0.65rem] uppercase tracking-[0.22em] text-mist">
               {session.isSuperAdmin ? "Super admin" : "Cabana admin"}

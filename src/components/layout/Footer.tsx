@@ -19,7 +19,7 @@ export function Footer({
     <footer className="border-t border-border bg-pine/40">
       <div className="mx-auto grid max-w-[1400px] gap-12 px-6 py-16 md:grid-cols-3 lg:px-12">
         <div>
-          <p className="font-display text-2xl tracking-[0.35em] text-ivory">NOMA</p>
+          <p className="font-display text-2xl tracking-[0.35em] text-ivory">LOBO CABANAS</p>
           <p className="max-w-xs pt-4 text-sm leading-relaxed text-mist">
             Cabanas de luxo na floresta, perto de Goiânia. Poucas unidades, muito silêncio.
           </p>
