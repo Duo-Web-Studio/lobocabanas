@@ -1,0 +1,3 @@
+UPDATE public.cabins SET name = 'Ipê', location = 'Perto de Goiânia · Goiás', short_description = 'Chalé A-Frame de dois pavimentos, cercado por floresta fechada.', description = 'Ipê segue a mesma arquitetura A-Frame de madeira da Aurora, em versão maior: dois pavimentos, pé-direito alto sob o telhado inclinado, deck amplo com varanda e floresta fechada em volta. Pensada para quem quer companhia sem perder o silêncio.' WHERE slug = 'selva';
+
+UPDATE public.cabins SET location = 'Perto de Goiânia · Goiás', short_description = 'Chalé A-Frame para dois, escondido na floresta fechada.' WHERE slug = 'aurora';
