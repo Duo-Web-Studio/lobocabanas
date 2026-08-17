@@ -12,7 +12,7 @@ import { listCabins } from "@/lib/public.functions";
 
 const TITLE = "Cabanas — NOMA Forest Cabins";
 const DESCRIPTION =
-  "Conheça as cabanas Aurora e Selva: hidromassagem privativa, deck sobre a mata e preços por noite atualizados. Consulte a disponibilidade.";
+  "Conheça as cabanas Aurora e Ipê: hidromassagem privativa, deck sobre a floresta e preços por noite atualizados. Consulte a disponibilidade.";
 
 export const Route = createFileRoute("/cabanas/")({
   head: () => ({

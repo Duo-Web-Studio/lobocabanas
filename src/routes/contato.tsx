@@ -6,7 +6,7 @@ import { generalMessage, waLink } from "@/lib/whatsapp-link";
 
 const TITLE = "Contato — NOMA Forest Cabins";
 const DESCRIPTION =
-  "Fale direto com a NOMA por WhatsApp ou e-mail para dúvidas, estadias longas e reservas especiais na Mata Atlântica.";
+  "Fale direto com a NOMA por WhatsApp ou e-mail para dúvidas, estadias longas e reservas especiais nas cabanas perto de Goiânia.";
 
 export const Route = createFileRoute("/contato")({
   head: () => ({

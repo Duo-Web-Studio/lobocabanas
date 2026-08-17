@@ -79,17 +79,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "NOMA — Cabanas de luxo na Mata Atlântica" },
+      { title: "NOMA — Cabanas de luxo perto de Goiânia" },
       {
         name: "description",
         content:
-          "Cabanas privativas de luxo na Mata Atlântica. Hidromassagem no deck, fogueira e reserva direta.",
+          "Cabanas privativas de luxo em meio à floresta, a poucos minutos de Goiânia. Hidromassagem no deck, fogueira e reserva direta.",
       },
       { name: "author", content: "NOMA Forest Cabins" },
-      { property: "og:title", content: "NOMA — Cabanas de luxo na Mata Atlântica" },
+      { property: "og:title", content: "NOMA — Cabanas de luxo perto de Goiânia" },
       {
         property: "og:description",
-        content: "Cabanas privativas de luxo na Mata Atlântica. Reserve direto, sem intermediários.",
+        content:
+          "Cabanas privativas de luxo na floresta, perto de Goiânia. Reserve direto, sem intermediários.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
