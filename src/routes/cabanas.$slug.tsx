@@ -12,9 +12,11 @@ import { getCabin } from "@/lib/public.functions";
 
 export const Route = createFileRoute("/cabanas/$slug")({
   head: ({ params }) => {
-    const name = params.slug.charAt(0).toUpperCase() + params.slug.slice(1);
+    const NAMES: Record<string, string> = { aurora: "Aurora", selva: "Ipê" };
+    const name =
+      NAMES[params.slug] ?? params.slug.charAt(0).toUpperCase() + params.slug.slice(1);
     const title = `Cabana ${name} — NOMA Forest Cabins`;
-    const description = `Reserve a Cabana ${name}: hidromassagem privativa, deck sobre a Mata Atlântica e disponibilidade em tempo real.`;
+    const description = `Reserve a Cabana ${name}: hidromassagem privativa, deck sobre a floresta perto de Goiânia e disponibilidade em tempo real.`;
     return {
       meta: [
         { title },

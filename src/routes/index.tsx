@@ -11,9 +11,9 @@ import { cabinCover, EDITORIAL_GALLERY, IMAGES } from "@/lib/images";
 import { listCabins } from "@/lib/public.functions";
 import { generalMessage, waLink } from "@/lib/whatsapp-link";
 
-const TITLE = "NOMA — Cabanas de luxo na Mata Atlântica";
+const TITLE = "NOMA — Cabanas de luxo perto de Goiânia";
 const DESCRIPTION =
-  "Duas cabanas privativas em plena Mata Atlântica: hidromassagem no deck, fogueira e silêncio absoluto. Reserve direto, sem intermediários.";
+  "Duas cabanas privativas na floresta, a poucos minutos de Goiânia: hidromassagem no deck, fogueira e silêncio absoluto. Reserve direto, sem intermediários.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -55,7 +55,7 @@ function Index() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 1 }}
           >
-            Mata Atlântica · Brasil
+            Perto de Goiânia · Goiás
           </motion.p>
           <motion.h1
             className="max-w-3xl pt-5 font-display text-[clamp(2.75rem,8vw,6rem)] leading-[0.95] text-ivory"
@@ -119,13 +119,13 @@ function Index() {
                 />
               </div>
               <p className="pt-3 text-[0.65rem] uppercase tracking-[0.18em] text-mist/60">
-                Mata Atlântica · duas cabanas · zero vizinhos
+                Perto de Goiânia · duas cabanas · zero vizinhos
               </p>
             </motion.div>
           </div>
           <div>
             <h2 className="font-display text-[clamp(1.75rem,4vw,3rem)] leading-tight text-ivory">
-              Duas cabanas de madeira em formato A-Frame, escondidas onde a mata é mais fechada.
+              Duas cabanas de madeira em formato A-Frame, escondidas onde a floresta é mais fechada.
             </h2>
             <p className="max-w-xl pt-6 leading-relaxed text-mist">
               Telhado inclinado, madeira aparente, teto alto e janela triangular voltada para as

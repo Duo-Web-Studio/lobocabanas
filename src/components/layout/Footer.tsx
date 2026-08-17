@@ -21,7 +21,7 @@ export function Footer({
         <div>
           <p className="font-display text-2xl tracking-[0.35em] text-ivory">NOMA</p>
           <p className="max-w-xs pt-4 text-sm leading-relaxed text-mist">
-            Cabanas de luxo na Mata Atlântica. Poucas unidades, muita floresta.
+            Cabanas de luxo na floresta, perto de Goiânia. Poucas unidades, muito silêncio.
           </p>
         </div>
 
@@ -79,7 +79,7 @@ export function Footer({
           <span>
             © {new Date().getFullYear()} {businessName}
           </span>
-          <span>Mata Atlântica · Brasil</span>
+          <span>Goiânia · Goiás · Brasil</span>
         </div>
       </div>
     </footer>
