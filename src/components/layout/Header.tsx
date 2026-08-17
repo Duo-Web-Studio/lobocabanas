@@ -3,6 +3,7 @@ import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 
 import { NomaButton } from "@/components/premium/NomaButton";
+import logoAsset from "@/assets/lobo-cabanas-logo.jpg.asset.json";
 import { cn } from "@/lib/utils";
 import { generalMessage, waLink } from "@/lib/whatsapp-link";
 
@@ -34,9 +35,19 @@ export function Header({ whatsapp }: { whatsapp?: string | null }) {
         scrolled ? "glass py-3" : "py-6",
       )}
     >
-      <div className="mx-auto flex max-w-[1400px] items-center justify-between px-6 lg:px-12">
-        <Link to="/" className="font-display text-xl tracking-[0.35em] text-ivory">
-          NOMA
+      {!scrolled ? (
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-x-0 top-0 h-[140%] bg-gradient-to-b from-black/70 via-black/35 to-transparent"
+        />
+      ) : null}
+      <div className="relative mx-auto flex max-w-[1400px] items-center justify-between px-6 lg:px-12">
+        <Link to="/" aria-label="Lobo Cabanas — página inicial" className="flex items-center">
+          <img
+            src={logoAsset.url}
+            alt="Lobo Cabanas"
+            className="h-[30px] w-auto rounded-sm md:h-9"
+          />
         </Link>
 
         <nav className="hidden items-center gap-10 md:flex">
@@ -44,7 +55,12 @@ export function Header({ whatsapp }: { whatsapp?: string | null }) {
             <Link
               key={item.to}
               to={item.to}
-              className="text-[0.7rem] uppercase tracking-[0.2em] text-mist transition-colors duration-500 hover:text-ivory"
+              className={cn(
+                "text-[0.7rem] uppercase tracking-[0.2em] transition-colors duration-500 hover:text-ivory",
+                scrolled
+                  ? "text-mist"
+                  : "text-ivory/90 [text-shadow:0_1px_10px_rgba(0,0,0,0.75)]",
+              )}
               activeProps={{ className: "text-ivory" }}
               activeOptions={{ exact: item.to === "/" }}
             >
