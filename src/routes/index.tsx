@@ -41,7 +41,7 @@ function Index() {
       <section className="relative flex min-h-[100svh] items-end overflow-hidden">
         <motion.img
           src={IMAGES.heroForest}
-          alt="Cabana iluminada em meio à Mata Atlântica ao anoitecer"
+          alt="Fogueira acesa à noite com luzes penduradas e a cabana A-Frame ao fundo"
           className="absolute inset-0 size-full object-cover"
           initial={{ scale: 1.08, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
@@ -112,8 +112,8 @@ function Index() {
             >
               <div className="aspect-[3/4] overflow-hidden">
                 <img
-                  src={IMAGES.selvaExterior}
-                  alt="Cabana de madeira com varanda cercada pela mata nativa"
+                  src={IMAGES.auroraExterior}
+                  alt="Cabana A-Frame de madeira com deck, guarda-sol e hidromassagem ao lado"
                   loading="lazy"
                   className="size-full object-cover"
                 />
